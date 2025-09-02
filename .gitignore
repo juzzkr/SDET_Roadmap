@@ -1,0 +1,22 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Pytest cache
+.pytest_cache/
+
+# Virtual environments
+venv/
+env/
+
+# Test reports
+*.log
+*.html
+*.xml
+reports/
+allure-results/
+allure-report/
+
+# VS Code settings
+.vscode/
