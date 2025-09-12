@@ -6,19 +6,19 @@ def pw():
     with sync_playwright() as p:
         yield p
 
-@pytest.fixture(scope="session")        
+@pytest.fixture(scope="function")        
 def browser(pw):
     browser = pw.chromium.launch(headless=False, slow_mo=700)
     yield browser
     browser.close()
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def page(browser):
     page = browser.new_page()
     yield page
     page.close()
     
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def login(page):  
     def _do_login(username = "standard_user", password = "secret_sauce"):      
         page.goto("https://www.saucedemo.com/")
